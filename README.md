@@ -2,7 +2,13 @@
 
 Best practices for deploying workload to Kubernetes. This repo is in English in order to accommodate multiple audiences (Swisscom, customer, customer's suppliers).
 
-## Best practices
+## Topics
+
+- [What is a Pod?](Pods/README.md)
+
+- [Stateless workload: Deployments](Deployments/README.md)
+
+- [Stateful workload: StatefulSets](StatefulSets/README.md)
 
 - Unprivileged containers
 
@@ -27,12 +33,6 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 - Run with ServiceAccounts
 
 - Resource requests and limits
-
-- What is a Pod?
-
-- Stateless workload: Deployments
-
-- Stateful workload: StatefulSets
 
 - Persistence
 
