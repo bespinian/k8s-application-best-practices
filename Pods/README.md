@@ -11,3 +11,19 @@ Containers which are tightly coupled to provide a certain functionality should b
 ## Which containers should not go together in Pod?
 
 Containers which have different purposes and / or different lifespans in an overall application architecture. Example: a container serving an api and a container running a database on which the api is based.
+
+## Example
+
+A pod which contains two containers. One container is an nginx server which serves an `index.html`, the other container writes random numbers to that `index.html`. The file `index.html` is stored on a volume which is shared between the two containers.
+
+Use the following command to deploy the pod:
+
+```
+kubectl apply -f examples/nginx-pod.yml
+```
+
+Use the following command to delete the pod:
+
+```
+kubectl delete -f examples/nginx-pod.yml
+```
