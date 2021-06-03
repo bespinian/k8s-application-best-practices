@@ -13,3 +13,15 @@ A web application which can be scaled horizontally by adding more replicas, each
 Example 1: A highly available database which runs in several replicas which hold state and which need to know about each other and need to exchange replication information. Use a [StatefulSet](../StatefulSets/README.md) instead.
 
 Example 2: Multiple heterogenous components of an application. Deployments are always based on one single Pod-specification. Use multiple Deployments for multiple different components.
+
+Use the following command to apply the deployment:
+
+```
+kubectl apply -f examples/nginx-deployment.yml
+```
+
+Use the following command to delete the deployment:
+
+```
+kubectl delete -f examples/nginx-deployment.yml
+```
