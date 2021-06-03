@@ -14,6 +14,8 @@ Example 1: A highly available database which runs in several replicas which hold
 
 Example 2: Multiple heterogenous components of an application. Deployments are always based on one single Pod-specification. Use multiple Deployments for multiple different components.
 
+## Examples
+
 Use the following command to apply the deployment:
 
 ```
