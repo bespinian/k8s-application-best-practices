@@ -8,7 +8,7 @@
 
 A highly available database which runs in several identical replicas which each hold state in their own storage and which need to know about each other, need to exchange replication information and elect a leader for write access.
 
-## What should not be configured as a Deployment?
+## What should not be configured as a StatefulSet?
 
 Example 1: A component with stateless replicas, which can be added and removed independently of each other.
 
@@ -18,6 +18,4 @@ Example 2: A legacy database technology which is based on integration via the st
 
 Use the following command to deploy a StatefulSet:
 
-
 Use the following command to delete the StatefulSet:
-
