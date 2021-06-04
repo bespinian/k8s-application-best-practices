@@ -12,32 +12,32 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 - [Exposing your components: Services](Services/README.md)
 
+- Liveness and readiness probes
+
+- Log to stdout / stderr
+
+- Restricting network connectivity
+
+- Configure via environment variables
+
+- Use ConfigMaps for config
+
+- Use Secrets for sensitive parameters
+
+- Resource requests and limits
+
 - Unprivileged containers
 
 - Distroless containers
 
 - Be declarative (includes image tagging)
 
-- Log to stdout / stderr
-
 - Expose your metrics on an endpoint
-
-- Configure via environment variables
-
-- Liveness and readiness probes
 
 - Fast startup, graceful shutdown
 
-- Use ConfigMaps for config
-
-- Use Secrets for sensitive parameters
-
 - Run with ServiceAccounts
 
-- Resource requests and limits
-
 - Persistence
-
-- Restricting network connectivity
 
 - Managing variants: Helm
