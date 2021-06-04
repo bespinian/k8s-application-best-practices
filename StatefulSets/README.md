@@ -16,6 +16,14 @@ Example 2: A legacy database technology which is based on integration via the st
 
 ## Examples
 
-Use the following command to deploy a StatefulSet:
+Use the following command to deploy a MongoDB StatefulSet:
+
+```
+kubectl apply -f examples/
+```
 
 Use the following command to delete the StatefulSet:
+
+```
+kubectl delete -f examples/
+```
