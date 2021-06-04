@@ -13,3 +13,15 @@ Pods of an application component which needs to be consumed by other components 
 Example 1: Pods which do not originate from the same Deployment or StatefulSet
 
 Example 2: application components which do no need to be accessed from the outside world like timer-based tasks or event-driven components listening to a queue or an event topic.
+
+Use the following command to create a Deployment and expose it through a Service:
+
+```
+kubectl apply -f examples/
+```
+
+Use the following command to delete the Service and the Deployment:
+
+```
+kubectl delete -f examples/
+```
