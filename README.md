@@ -10,6 +10,8 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 - [Stateful workload: StatefulSets](StatefulSets/README.md)
 
+- [Exposing your components: Services](Services/README.md)
+
 - Unprivileged containers
 
 - Distroless containers
@@ -35,8 +37,6 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 - Resource requests and limits
 
 - Persistence
-
-- Exposing your components
 
 - Restricting network connectivity
 
