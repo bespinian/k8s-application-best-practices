@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: logging-right
+spec:
+  containers:
+    - args:
+        - /bin/sh
+        - -c
+        - while true; do echo "Hi, I am logging to stdout"; sleep 5; done
+      image: busybox
+      name: busybox
+  restartPolicy: Never
