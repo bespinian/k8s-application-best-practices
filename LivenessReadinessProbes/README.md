@@ -17,3 +17,15 @@ In case we are dealing with a legacy application which takes an unusually long t
 ## What should liveness, readiness and startup probes check?
 
 Liveness probes should ideally run a quick but semantically complete checks of the health of a Pod. They should check things like "is the database connection working?" or "do I have a connection to the component I depend on?". Readiness probes should check the responsiveness of an average request to the Pod. Startup probes should do the same but with different `failureThreshold` and `periodSeconds` values.
+
+Use the following command to create a Deployment with a simulated liveness and a readiness probe
+
+```
+kubectl apply -f examples/
+```
+
+Use the following command to delete the Deployment:
+
+```
+kubectl delete -f examples/
+```

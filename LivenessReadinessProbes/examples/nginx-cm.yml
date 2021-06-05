@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-conf
+data:
+  nginx.conf: |
+    events {
+
+    }
+    http {
+      server {
+          listen 80;
+          server_name _;
+
+          location / {
+            add_header Content-Type "text/html; charset=UTF-8";
+            return 200 '<!doctype html><html lang=en><head><meta charset=utf-8><title></title></head><body>ok</body></html>';
+          }
+
+          location /health {
+            add_header Content-Type "text/html; charset=UTF-8";
+            return 200 '<!doctype html><html lang=en><head><meta charset=utf-8><title></title></head><body>healthy</body></html>';
+          }
+      }
+    }
