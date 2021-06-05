@@ -12,9 +12,11 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 - [Exposing your components: Services](Services/README.md)
 
-- Liveness and readiness probes
+- [Liveness and readiness probes](LivenessReadinessProbes/README.md)
 
 - Log to stdout / stderr
+
+- Expose your metrics on an endpoint
 
 - Restricting network connectivity
 
@@ -31,8 +33,6 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 - Distroless containers
 
 - Be declarative (includes image tagging)
-
-- Expose your metrics on an endpoint
 
 - Fast startup, graceful shutdown
 
