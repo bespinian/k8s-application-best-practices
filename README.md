@@ -14,7 +14,7 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 - [Liveness and readiness probes](LivenessReadinessProbes/README.md)
 
-- Log to stdout / stderr
+- [Log to stdout / stderr](Logging/README.md)
 
 - Expose your metrics on an endpoint
 
