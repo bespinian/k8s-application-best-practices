@@ -16,10 +16,16 @@ Example 2: Multiple heterogenous components of an application. Deployments are a
 
 ## Examples
 
-Use the following command to apply the deployment:
+An NGINX deployment with three replicas. Use the following command to apply the deployment:
 
 ```
 kubectl apply -f examples/nginx-deployment.yml
+```
+
+Check the Pods with
+
+```
+kubectl get pods
 ```
 
 Use the following command to delete the deployment:

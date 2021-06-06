@@ -16,10 +16,24 @@ Example 2: A legacy database technology which is based on integration via the st
 
 ## Examples
 
-Use the following command to deploy a MongoDB StatefulSet:
+A MongoDB cluster with 3 replicas. The Pod-spec contains a `mongo` container and a sidecar. The latter is responsible for executing the cluster-join functionality when a new replica is added.
+
+Use the following command to deploy the StatefulSet:
 
 ```
 kubectl apply -f examples/
+```
+
+Observe the pods with
+
+```
+kubectl get pods
+```
+
+As soon as the first pod is up, follow the logs of its sidecar container to observe the other replicas joining the cluster.
+
+```
+kubectl logs mongodb -c mongodb-k8s-sidecar -f
 ```
 
 Use the following command to delete the StatefulSet:

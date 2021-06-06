@@ -18,11 +18,23 @@ In case we are dealing with a legacy application which takes an unusually long t
 
 Liveness probes should ideally run a quick but semantically complete checks of the health of a Pod. They should check things like "is the database connection working?" or "do I have a connection to the component I depend on?". Readiness probes should check the responsiveness of an average request to the Pod. Startup probes should do the same but with different `failureThreshold` and `periodSeconds` values.
 
-Use the following command to create a Deployment with a simulated liveness and a readiness probe
+## Example
+
+An NGINX deployment with one replica with a simulated liveness and readiness probe. The readiness probe is configured to only be checked after initially waiting 10 seconds.
+
+Use the following command to create the Deployment:
 
 ```
 kubectl apply -f examples/
 ```
+
+Check the pods using
+
+```
+kubectl get pods
+```
+
+Confirm that the Pod takes something over 10s to become ready.
 
 Use the following command to delete the Deployment:
 
