@@ -20,9 +20,7 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 - [Expose your metrics on an endpoint](Metrics/README.md)
 
-- Configure via environment variables
-
-- Use ConfigMaps for config
+- [Configure via environment variables / use ConfigMaps for config](Configuration/README.md)
 
 - Resource requests and limits
 

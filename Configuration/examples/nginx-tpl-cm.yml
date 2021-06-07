@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-template-conf
+data:
+  nginx.conf.template: |
+    events {
+
+    }
+    http {
+      server {
+          listen 80;
+          server_name _;
+
+          location / {
+            add_header Content-Type "text/html; charset=UTF-8";
+            return 200 '${CUSTOM_GREETING} - ${CUSTOM_MESSAGE}';
+          }
+      }
+    }

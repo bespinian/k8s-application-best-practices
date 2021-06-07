@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-deployment-1
+  name: nginx-deployment-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-deployment-1
+  template:
+    metadata:
+      labels:
+        app: nginx-deployment-1
+    spec:
+      containers:
+        - image: nginx
+          name: nginx
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: cfg
+              mountPath: /etc/nginx
+              readOnly: true
+      volumes:
+        - name: cfg
+          configMap:
+            name: nginx-conf

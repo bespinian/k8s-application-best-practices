@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-deployment-2
+  name: nginx-deployment-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-deployment-2
+  template:
+    metadata:
+      labels:
+        app: nginx-deployment-2
+    spec:
+      containers:
+        - image: nginx
+          name: nginx
+          ports:
+            - containerPort: 80
+          env:
+            - name: CUSTOM_MESSAGE
+              value: This is a parameter which depends on the environment
+            - name: CUSTOM_GREETING
+              valueFrom:
+                configMapKeyRef:
+                  name: values
+                  key: customGreeting
+            - name: NGINX_ENVSUBST_OUTPUT_DIR
+              value: /etc/nginx
+          volumeMounts:
+            - name: cfg
+              mountPath: /etc/nginx/templates
+              readOnly: true
+      volumes:
+        - name: cfg
+          configMap:
+            name: nginx-template-conf
