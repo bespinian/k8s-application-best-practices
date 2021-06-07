@@ -18,7 +18,7 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 - [Log to stdout / stderr](Logging/README.md)
 
-- Expose your metrics on an endpoint
+- [Expose your metrics on an endpoint](Metrics/README.md)
 
 - Configure via environment variables
 
