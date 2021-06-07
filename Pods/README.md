@@ -1,4 +1,4 @@
-# What is a Pod?
+# What a Pod is and what a Pod is not
 
 ![Diagram of Kubernetes resources with pods focused](img/pods.png "Pods")
 

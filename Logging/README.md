@@ -1,4 +1,4 @@
-# Log to stdout / stderr
+# Make your components log to stdout / stderr
 
 ![Overview of EFK architecture on Kubernetes](img/efk.png)
 
@@ -8,7 +8,8 @@ Application components deployed to Kubernetes should always write their logs to 
 1. we want logs to be easily accessible to log aggregation solutions like fluentd which collect the logs of all containers on a Kubernetes cluster and forward them to a central logging platform and
 1. logs stored in the local file system are lost when a container crashes.
 
-Rule of thumb: it should never be necessary to open an shell in a container in order to inspect the logs of an application container.
+## Rule of thumb
+It should never be necessary to open an shell in a container in order to inspect the logs of an application container.
 
 ## Examples
 

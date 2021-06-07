@@ -1,4 +1,4 @@
-# Stateless workload: Deployments
+# Use Deployments for stateless components
 
 ![Diagram of Kubernetes resources with deployment focused](img/deployment.png)
 

@@ -1,4 +1,4 @@
-# Expose your metrics on an endpoint
+# Expose your component's metrics on an endpoint
 
 ![Overview of Prometheus application scraping in Kubernetes](img/scraping.png)
 

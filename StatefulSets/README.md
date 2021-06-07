@@ -1,4 +1,4 @@
-# Stateful workload: StatefulSets
+# Use StatefulSets for stateful components
 
 ![Schematic of a stateful set](img/statefulset.png)
 

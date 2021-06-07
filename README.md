@@ -2,25 +2,25 @@
 
 Best practices for deploying workload to Kubernetes. This repo is in English in order to accommodate multiple audiences (Swisscom, customer, customer's suppliers).
 
-## Topics
+## Best practices
 
 ### Application architecture
 
-- [What is a Pod?](Pods/README.md)
+- [What a Pod is and what a Pod is not](Pods/README.md)
 
-- [Stateless workload: Deployments](Deployments/README.md)
+- [Use Deployments for stateless components](Deployments/README.md)
 
-- [Stateful workload: StatefulSets](StatefulSets/README.md)
+- [Use StatefulSets for stateful components](StatefulSets/README.md)
 
-- [Exposing your components: Services](Services/README.md)
+- [Use Services to expose and access your components](Services/README.md)
 
-- [Liveness and readiness probes](LivenessReadinessProbes/README.md)
+- [Use liveness and readiness probes on you components](LivenessReadinessProbes/README.md)
 
-- [Log to stdout / stderr](Logging/README.md)
+- [Make your components log to stdout / stderr](Logging/README.md)
 
-- [Expose your metrics on an endpoint](Metrics/README.md)
+- [Expose your component's metrics on an endpoint](Metrics/README.md)
 
-- [Configure via environment variables / use ConfigMaps for config](Configuration/README.md)
+- [Configure components via environment variables and use ConfigMaps for configuration parameters](Configuration/README.md)
 
 - Resource requests and limits
 
