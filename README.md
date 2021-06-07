@@ -4,6 +4,8 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 ## Topics
 
+### Application architecture
+
 - [What is a Pod?](Pods/README.md)
 
 - [Stateless workload: Deployments](Deployments/README.md)
@@ -18,26 +20,30 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 - Expose your metrics on an endpoint
 
-- Restricting network connectivity
-
 - Configure via environment variables
 
 - Use ConfigMaps for config
 
-- Use Secrets for sensitive parameters
-
 - Resource requests and limits
 
-- Unprivileged containers
-
-- Distroless containers
-
-- Be declarative (includes image tagging)
+- Persistence
 
 - Fast startup, graceful shutdown
 
+### Security
+
+- Use Secrets for sensitive parameters
+
+- Restricting network connectivity
+
+- Unprivileged containers
+
 - Run with ServiceAccounts
 
-- Persistence
+- Distroless containers
+
+### Deployment
+
+- Be declarative (includes image tagging)
 
 - Managing variants: Helm
