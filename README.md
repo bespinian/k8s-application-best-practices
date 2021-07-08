@@ -22,7 +22,7 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 - [Configure components via environment variables and use ConfigMaps for configuration parameters](Configuration/README.md)
 
-- Resource requests and limits
+- [Resource requests and limits](RequestsLimits/README.md)
 
 - Persistence
 
