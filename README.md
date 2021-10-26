@@ -26,7 +26,7 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 - [Persistence](Persistence/README.md)
 
-- Fast startup, graceful shutdown
+- [Graceful shutdown](Shutdown/README.md)
 
 ### Security
 
