@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graceful-shutdown
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: graceful-shutdown
+  template:
+    metadata:
+      labels:
+        app: graceful-shutdown
+    spec:
+      containers:
+        - command:
+            - /bin/sh
+            - -c
+            - _term() { echo "$HOSTNAME got SIGTERM! Better finish cleaning up! preStop was called previously:"; cat /tmp/preStop.txt; }; trap _term SIGTERM; while true; do echo "$HOSTNAME happily running"; sleep 5; done;
+          image: busybox
+          name: graceful
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                  [
+                    "/bin/sh",
+                    "-c",
+                    "mkdir /tmp; echo 'preStop-hook was called! Cleaning up!' >> /tmp/preStop.txt",
+                  ]
