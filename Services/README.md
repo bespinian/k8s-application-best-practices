@@ -18,18 +18,18 @@ Example 2: application components which do no need to be accessed from the outsi
 
 Use the following command to create an NGINX Deployment with three replicas and expose it through a Service of type `LoadBalancer`. Note how the Service selects the pods of the Deployment via the label `app: nginx-deployment`.
 
-```
+```shell
 kubectl apply -f examples/
 ```
 
 Check that the service receives an IP in the Node network:
 
-```
+```shell
 kubectl get svc nginx -o wide
 ```
 
 Use the following command to delete the Service and the Deployment:
 
-```
+```shell
 kubectl delete -f examples/
 ```

@@ -6,6 +6,7 @@ In Kubernetes any configuration of an application component which varies between
 1. by using file-based [ConfigMaps](https://kubernetes.io/docs/concepts/configuration/configmap) to mount config files in the relevant locations of a containers file system
 
 ## Rule of thumb
+
 It should never be necessary to open an shell in a container in order to set some configuration options before an application component is started.
 
 ## Examples
@@ -14,19 +15,19 @@ Two NGINX deployments. One obtains its config via a ConfigMap mounted as a volum
 
 Use the following command to apply the deployments
 
-```
+```shell
 kubectl apply -f examples/
 ```
 
 Check the pods and remember their IPs
 
-```
+```shell
 kubectl get pods -o wide
 ```
 
 Make requests the nginx instances and check the outputs
 
-```
+```shell
 kubectl run curl --image=curlimages/curl --rm -it -- curl <Pod 1 IP>
 
 kubectl run curl --image=curlimages/curl --rm -it -- curl <Pod 2 IP>
@@ -34,6 +35,6 @@ kubectl run curl --image=curlimages/curl --rm -it -- curl <Pod 2 IP>
 
 Use the following command to delete the deployments
 
-```
+```shell
 kubectl delete -f examples/
 ```

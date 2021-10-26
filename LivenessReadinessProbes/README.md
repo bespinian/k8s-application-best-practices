@@ -24,13 +24,13 @@ An NGINX deployment with one replica with a simulated liveness and readiness pro
 
 Use the following command to create the Deployment:
 
-```
+```shell
 kubectl apply -f examples/
 ```
 
 Check the pods using
 
-```
+```shell
 kubectl get pods
 ```
 
@@ -38,6 +38,6 @@ Confirm that the Pod takes something over 10s to become ready.
 
 Use the following command to delete the Deployment:
 
-```
+```shell
 kubectl delete -f examples/
 ```

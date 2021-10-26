@@ -10,24 +10,24 @@ Another reason why resource request and limit declarations should be used is, th
 
 An NGINX deployment with one replica with CPU request set to 100 milli-CPUs, memory request set to 100 megabytes, CPU limit set to 250 milli-CPUs and memory limit set 128 megabytes.
 
-```
+```shell
 kubectl apply -f examples/nginx-deployment.yml
 ```
 
 Check the Pods with
 
-```
+```shell
 kubectl get pods
 ```
 
 Check that each pod has the requests and limits set as specified
 
-```
+```shell
 kubectl describe pod nginx-deployment-<id>
 ```
 
 Use the following command to delete the deployment:
 
-```
+```shell
 kubectl delete -f examples/nginx-deployment.yml
 ```

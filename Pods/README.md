@@ -18,12 +18,12 @@ A pod which contains two containers. One container is an nginx server which serv
 
 Use the following command to deploy the pod:
 
-```
+```shell
 kubectl apply -f examples/nginx-pod.yml
 ```
 
 Use the following command to delete the pod:
 
-```
+```shell
 kubectl delete -f examples/nginx-pod.yml
 ```

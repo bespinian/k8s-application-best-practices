@@ -12,24 +12,24 @@ An NGINX deployment with a sidecar container which exports metrics on port `9113
 
 Use the following command to create the Deployment:
 
-```
+```shell
 kubectl apply -f examples/
 ```
 
 Check the pod using
 
-```
+```shell
 kubectl get pods -o wide
 ```
 
 Confirm that the Pod exposes a `metrics` on port `9113` endpoint by running the following command:
 
-```
+```shell
 kubectl run curl --image=curlimages/curl --rm -it -- curl <Pod IP>:9113/metrics
 ```
 
 Use the following command to delete the Deployment:
 
-```
+```shell
 kubectl delete -f examples/
 ```

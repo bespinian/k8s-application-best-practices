@@ -20,24 +20,24 @@ A MongoDB cluster with 3 replicas. The Pod-spec contains a `mongo` container and
 
 Use the following command to deploy the StatefulSet:
 
-```
+```shell
 kubectl apply -f examples/
 ```
 
 Observe the pods with
 
-```
+```shell
 kubectl get pods
 ```
 
 As soon as the first pod is up, follow the logs of its sidecar container to observe the other replicas joining the cluster.
 
-```
+```shell
 kubectl logs mongodb -c mongodb-k8s-sidecar -f
 ```
 
 Use the following command to delete the StatefulSet:
 
-```
+```shell
 kubectl delete -f examples/
 ```
