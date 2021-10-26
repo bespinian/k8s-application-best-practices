@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-producer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-producer
+  template:
+    metadata:
+      labels:
+        app: data-producer
+    spec:
+      containers:
+        - command:
+            - /bin/sh
+            - -c
+            - echo "Some persistent data from $HOSTNAME" >> /data/data-file.txt; sleep 3600;
+          image: busybox
+          name: data-producer
+          volumeMounts:
+            - mountPath: /data
+              name: data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: data-volume
