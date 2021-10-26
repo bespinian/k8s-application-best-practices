@@ -24,7 +24,7 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 - [Resource requests and limits](RequestsLimits/README.md)
 
-- Persistence
+- [Persistence](Persistence/README.md)
 
 - Fast startup, graceful shutdown
 
