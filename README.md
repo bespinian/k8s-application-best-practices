@@ -30,13 +30,11 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 ### Security
 
-- Use Secrets for sensitive parameters
+- Run with ServiceAccounts
 
 - Restricting network connectivity
 
 - Unprivileged containers
-
-- Run with ServiceAccounts
 
 - Distroless containers
 

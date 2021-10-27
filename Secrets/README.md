@@ -1,0 +1,3 @@
+# Use Secrets for Sensitive Parameters
+
+If you application requires sensitive configuration parameters like credentials, keys or certificates, you should provide these to the application using [Secrets](https://kubernetes.io/docs/concepts/configuration/secret). Unlike ConfigMaps, secrets are never shown to the user in clear text and they are not intended to be stored as YAML-files in source control. Instead they are either populated manually on the command line or via an integration to a secrets repository like Hashicorp Vault or [Cyberark](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-DAP/Latest/en/Content/Integrations/k8s-ocp/cjr-secrets-provider-lp.htm).
