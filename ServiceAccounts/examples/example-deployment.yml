@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: example
+  name: example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example
+  template:
+    metadata:
+      labels:
+        app: example
+    spec:
+      serviceAccountName: example
+      containers:
+        - command:
+            - /bin/sh
+            - -c
+            - sleep 3600;
+          image: busybox
+          name: busybox

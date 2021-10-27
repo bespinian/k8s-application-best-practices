@@ -30,7 +30,7 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 ### Security
 
-- Run with ServiceAccounts
+- [Run with ServiceAccounts](ServiceAccounts/README.md)
 
 - Restricting network connectivity
 
