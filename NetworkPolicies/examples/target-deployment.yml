@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: target
+  name: target
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: target
+  template:
+    metadata:
+      labels:
+        app: target
+    spec:
+      containers:
+        - command:
+            - /bin/sh
+            - -c
+            - while true; do nc -lk -p 1234; done
+          image: alpine
+          name: listener
+          ports:
+            - containerPort: 1234

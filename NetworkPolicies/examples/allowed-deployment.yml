@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: allowed
+  name: allowed
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: allowed
+  template:
+    metadata:
+      labels:
+        app: allowed
+    spec:
+      containers:
+        - command:
+            - /bin/sh
+            - -c
+            - sleep 3600;
+          image: alpine
+          name: allowed

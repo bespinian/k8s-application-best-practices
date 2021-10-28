@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: denied
+  name: denied
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: denied
+  template:
+    metadata:
+      labels:
+        app: denied
+    spec:
+      containers:
+        - command:
+            - /bin/sh
+            - -c
+            - sleep 3600;
+          image: alpine
+          name: denied
