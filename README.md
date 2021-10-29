@@ -34,7 +34,7 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 - [Restricting network connectivity](NetworkPolicies/README.md)
 
-- Unprivileged containers
+- [Unprivileged containers](UnprivilegedContainers/README.md)
 
 - Distroless containers
 

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-privileged
+  name: nginx-privileged
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-privileged
+  template:
+    metadata:
+      labels:
+        app: nginx-privileged
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 3000
+        fsGroup: 2000
+      containers:
+        - image: nginx
+          name: nginx
+          ports:
+            - containerPort: 80
+          securityContext:
+            allowPrivilegeEscalation: false

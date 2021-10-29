@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-unprivileged
+  name: nginx-unprivileged
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-unprivileged
+  template:
+    metadata:
+      labels:
+        app: nginx-unprivileged
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 3000
+        fsGroup: 2000
+      containers:
+        - image: nginxinc/nginx-unprivileged
+          name: nginx-unprivileged
+          ports:
+            - containerPort: 8080
+          securityContext:
+            allowPrivilegeEscalation: false
