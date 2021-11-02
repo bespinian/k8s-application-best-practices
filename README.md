@@ -40,6 +40,6 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 ### Deployment
 
-- Be declarative (includes image tagging)
+- [Be declarative](DeclarativeResources/README.md)
 
 - Managing variants: Helm
