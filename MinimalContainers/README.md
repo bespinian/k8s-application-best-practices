@@ -8,7 +8,7 @@ We can mitigate this by using multi-stage builds for building our container imag
 
 ### A minimal Python application image
 
-Images for applications written in interpreted languages like Python or NodeJS can usually be stripped down to a minimal runtime. Use the following command to build a non-minimal image for a Python Flask application:
+Images for applications written in interpreted languages like Python or NodeJS can usually be stripped down to a minimal runtime. Consider the following non-optimal Dockerfile:
 
 ```Dockerfile
 FROM python:3.9
@@ -21,11 +21,17 @@ RUN pip install -r requirements.txt
 
 COPY src/ .
 
-# command to run on container start
 CMD [ "python", "./example.py" ]
 ```
 
-Now build the same application using a multistage build:
+Use the following command to build a non-minimal image for a Python Flask application:
+
+```shell
+export REPO="<your container registry>"
+docker build examples/python -f examples/python/Dockerfile -t "$REPO/python-example:0.0.1"
+```
+
+Now consider the same application in a multistage build:
 
 ```Dockerfile
 FROM python:3.9 AS builder
@@ -44,13 +50,31 @@ ENV PATH=/root/.local:$PATH
 CMD [ "python", "./server.py" ]
 ```
 
-We can compare the two images using the `dive` tool for inspecting container images.
+Use the following command to build a optimized image for a Python Flask application:
+
+```shell
+docker build examples/python -f examples/python/minimal.Dockerfile -t "$REPO/python-minimal-example:0.0.1"
+```
+
+We can compare the two images using the `dive` tool for inspecting container images:
+
+```shell
+dive "$REPO/python-example:0.0.1"
+```
+
+Just looking at the size we see that this image is more than 800 megabytes.
+
+```shell
+dive "$REPO/python-minimal-example:0.0.1"
+```
+
+If we look at the size of the minimal image, we see that it is less than 50 megabytes.
 
 ### A distroless golang application image
 
 Images for applications written in a compiled language like Go can be stripped down even further, starting from `scratch` in the image build and adding only the compiled binary.
 
-In order to compare the situation in this case, we can build this non-minimal image:
+In order to compare the situation in this case, we consider this non-minimal image:
 
 ```Dockerfile
 FROM golang:1
@@ -62,7 +86,13 @@ EXPOSE 8080
 ENTRYPOINT ["./app"]
 ```
 
-Now we can execute this multistage build. Note that the second build stage starts from `scratch`, which is the keyword for an empty image.
+We can build it using the following command:
+
+```shell
+docker build examples/golang -f examples/golang/Dockerfile -t "$REPO/golang-example:0.0.1"
+```
+
+Now consider this multistage build. Note that the second build stage starts from `scratch`, which is the keyword for an empty image.
 
 ```Dockerfile
 FROM golang:1 as builder
@@ -80,4 +110,22 @@ EXPOSE 8080
 ENTRYPOINT ["./app"]
 ```
 
+We can build it using the following command:
+
+```shell
+docker build examples/golang -f examples/golang/minimal.Dockerfile -t "$REPO/golang-minimal-example:0.0.1"
+```
+
 We can again compare the two images using the `dive` tool for inspecting container images.
+
+```shell
+dive "$REPO/golang-example:0.0.1"
+```
+
+Just looking at the size we see that this image is more than 800 megabytes.
+
+```shell
+dive "$REPO/golang-minimal-example:0.0.1"
+```
+
+If we look at the size of the minimal image, we see that it is less than 5 megabytes and contains almost only the built binary.
