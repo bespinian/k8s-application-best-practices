@@ -42,4 +42,4 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 - [Be declarative](DeclarativeResources/README.md)
 
-- Managing variants: Helm
+- [Managing variants](Variants/README.md)
