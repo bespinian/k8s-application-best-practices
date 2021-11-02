@@ -28,7 +28,7 @@ In this case you should use Helm instead.
 
 ![Illustration of the way Helm works](./img/helm.png "Helm")
 
-Helm uses the approach of templates to manage variants. It starts from a set of template files comprised of YAML with Go-template expressions. For every variant you define an additional YAML file with the values which fill the customization points in the templates. The templates themselves are not valid Kubernetes YAML because they contain variables.
+Helm uses the approach of templates to manage variants. It starts from a set of template files comprised of YAML with Go-template expressions. For every variant you define an additional YAML file with the values which fill the customization points in the templates. The templates themselves are not valid Kubernetes YAML because they contain variables and template expressions.
 
 ### When to use Helm
 
