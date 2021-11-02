@@ -36,7 +36,7 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 - [Unprivileged containers](UnprivilegedContainers/README.md)
 
-- Distroless containers
+- [Minimal Containers](MinimalContainers/README.md)
 
 ### Deployment
 
