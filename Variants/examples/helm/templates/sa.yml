@@ -1,0 +1,8 @@
+{{- if .Values.serviceAccount.create -}}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ include "helm-demo.serviceAccountName" . }}
+  labels:
+    {{- include "helm-demo.labels" . | nindent 4 }}
+{{- end }}

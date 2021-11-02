@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-dev
+  namespace: awesome-app-dev
+  labels:
+    app: awesome-app
+spec:
+  ports:
+    - port: 5432
+      targetPort: 5432
+  selector:
+    component: awesome-app-db

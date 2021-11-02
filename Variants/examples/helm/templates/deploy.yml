@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "helm-demo.fullname" . }}
+  labels: {{- include "helm-demo.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels: {{- include "helm-demo.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels: {{- include "helm-demo.selectorLabels" . | nindent 8 }}
+    spec:
+      serviceAccountName: {{ include "helm-demo.serviceAccountName" . }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: {{.Values.image.repository}}:{{ include "helm-demo.imageVersion" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: APP_TITLE
+              value: {{ required "You need to set an .Values.app.title!" .Values.app.title }}
+            - name: DB_HOST
+              value: {{ include "helm-demo.dbHost" . }}
+            - name: APP_VERSION
+              value: {{ include "helm-demo.imageVersion" . }}
+          ports:
+            - containerPort: 8080

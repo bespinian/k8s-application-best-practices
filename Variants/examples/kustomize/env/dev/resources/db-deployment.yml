@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: awesome-app
+  name: awesome-app-db-deploy
+  namespace: awesome-app-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: awesome-app-db
+  template:
+    metadata:
+      labels:
+        component: awesome-app-db
+    spec:
+      containers:
+        - image: postgres:11
+          name: postgres
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_HOST_AUTH_METHOD
+              value: trust

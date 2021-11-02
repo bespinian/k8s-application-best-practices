@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: awesome-app
+  name: awesome-app-config
+  namespace: awesome-app
+data:
+  appTitle: Something awesome
+  dbHost: db.bespinian.io
+  appVersion: 1.0.0

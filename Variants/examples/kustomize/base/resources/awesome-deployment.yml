@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: awesome-app
+  namespace: awesome-app
+  labels:
+    app: awesome-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: awesome-app
+  template:
+    metadata:
+      labels:
+        component: awesome-app
+    spec:
+      serviceAccountName: awesome-app
+      containers:
+        - name: awesome-app
+          image: bespinian/awesome-image:1.0.0
+          imagePullPolicy: Always
+          env:
+            - name: APP_TITLE
+              valueFrom:
+                configMapKeyRef:
+                  name: awesome-app-config
+                  key: appTitle
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: awesome-app-config
+                  key: dbHost
+            - name: APP_VERSION
+              valueFrom:
+                configMapKeyRef:
+                  name: awesome-app-config
+                  key: appVersion
+          ports:
+            - containerPort: 8080
