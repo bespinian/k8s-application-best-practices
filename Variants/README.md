@@ -24,6 +24,45 @@ Kustomize uses the approach of overlays to manage variants. It starts from a bas
 
 In this case you should use Helm instead.
 
+### Example Kustomize setup
+
+An application which has a productive and a development environment. The productive environment is in a namespace called `awesome-app`, the development environment in `awesome-app-dev`. The productive environment is running version `1.0.0` of the application with 3 replicas and has additional liveness and readiness probes. The development environment is running version `2.0.0` of the application with one replica and is using a development instance of the database hosted on Kubernetes.
+
+Create the namespaces with the following commands:
+
+```shell
+kubectl create ns awesome-app
+kubectl create ns awesome-app-dev
+```
+
+Apply the `dev` environment with the following command. As you can see Kustomize is included in `kubectl` via the `-k` option:
+
+```shell
+kubectl apply -k examples/kustomize/env/dev
+```
+
+Apply the `prd` environment with the following command:
+
+```shell
+kubectl apply -k examples/kustomize/env/prd
+```
+
+Inspect the deployment by looking at the Pods that were created:
+
+```shell
+kubectl get pods -n awesome-app
+kubectl get pods -n awesome-app-dev
+```
+
+Clean up using the following commands:
+
+```shell
+kubectl delete -k examples/kustomize/env/dev
+kubectl delete -k examples/kustomize/env/prd
+kubectl delete ns awesome-app
+kubectl delete ns awesome-app-dev
+```
+
 ## Helm
 
 ![Illustration of the way Helm works](./img/helm.png "Helm")
@@ -42,3 +81,46 @@ Helm uses the approach of templates to manage variants. It starts from a set of 
 - When you have no need to distribute application variants to potentially unknown users.
 
 In this case you should use Kustomize instead.
+
+### Helm example
+
+The analogous example to the Kustomize case. Create the namespaces using the following commands:
+
+```shell
+kubectl create ns awesome-helm
+kubectl create ns awesome-helm-dev
+```
+
+Deploy the `dev` environment using the following command:
+
+```shell
+helm install dev examples/helm -f examples/helm/values-dev.yaml --namespace awesome-helm-dev
+```
+
+Deploy the `prd` environment using the following command:
+
+```shell
+helm install prd examples/helm -f examples/helm/values.yaml --namespace awesome-helm
+```
+
+Inspect the deployment by looking at the Pods that were created:
+
+```shell
+kubectl get pods -n awesome-helm
+kubectl get pods -n awesome-helm-dev
+```
+
+List the Helm deployments:
+
+```shell
+helm list -A
+```
+
+Clean up using the following commands:
+
+```shell
+helm uninstall prd --namespace awesome-helm
+helm uninstall dev --namespace awesome-helm-dev
+kubectl delete ns awesome-helm
+kubectl delete ns awesome-helm-dev
+```
