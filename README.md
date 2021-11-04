@@ -30,6 +30,8 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 
 ### Security
 
+- [Use Secrets](Secrets/README.md)
+
 - [Run with ServiceAccounts](ServiceAccounts/README.md)
 
 - [Restricting network connectivity](NetworkPolicies/README.md)
