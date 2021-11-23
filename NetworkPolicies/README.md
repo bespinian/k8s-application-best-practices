@@ -8,7 +8,7 @@ Network policies are firewall rules which act at the Container Network Interface
 
 ## What NetworkPolicies cannot do
 
-NetworkPolicies have no insight into traffic at layer 7, i.e. the application layer. They cannot act on such things user or service identity, credentials or certificates. These concerns are typically addressed by adding a service mesh like [Istio](https://istio.io) on top. NetworkPolicies also have no knowledge of the Service or Ingress rules through which Pods might be accessed and they will allow or deny traffic regardless of the presence of such additional resources.
+NetworkPolicies have no insight into traffic at layer 7, i.e. the application layer. They cannot act on such things as user or service identity, credentials or certificates. These concerns are typically addressed by adding a service mesh like [Istio](https://istio.io) on top. NetworkPolicies also have no knowledge of the Service or Ingress rules through which Pods might be accessed and they will allow or deny traffic regardless of the presence of such additional resources.
 
 ## Examples
 
