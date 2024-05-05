@@ -1,6 +1,6 @@
 # caas-best-practices
 
-Best practices for deploying workload to Kubernetes. This repo is in English in order to accommodate multiple audiences (Swisscom, customer, customer's suppliers).
+Best practices for applications on Kubernetes.
 
 ## Best practices
 
@@ -37,6 +37,8 @@ Best practices for deploying workload to Kubernetes. This repo is in English in 
 - [Unprivileged containers](UnprivilegedContainers/README.md)
 
 - [Minimal Containers](MinimalContainers/README.md)
+
+- [Use Secrets with care](/Secrets/README.md)
 
 ### Deployment
 
