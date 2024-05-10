@@ -1,4 +1,4 @@
-# caas-best-practices
+# k8s-application-best-practices
 
 Best practices for applications on Kubernetes.
 
