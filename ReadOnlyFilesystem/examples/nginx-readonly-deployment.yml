@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-readonly
+  name: nginx-readonly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-readonly
+  template:
+    metadata:
+      labels:
+        app: nginx-readonly
+    spec:
+      containers:
+        - image: nginxinc/nginx-unprivileged
+          name: nginx-unprivileged
+          ports:
+            - containerPort: 8080
+          securityContext:
+            readOnlyRootFilesystem: true

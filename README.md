@@ -36,6 +36,8 @@ Best practices for applications on Kubernetes.
 
 - [Unprivileged containers](UnprivilegedContainers/README.md)
 
+- [Read-only filesystem](ReadOnlyFilesystem/README.md)
+
 - [Minimal Containers](MinimalContainers/README.md)
 
 - [Use Secrets with care](/Secrets/README.md)

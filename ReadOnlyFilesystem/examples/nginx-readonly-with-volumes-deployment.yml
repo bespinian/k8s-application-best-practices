@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-readonly-with-volumes
+  name: nginx-readonly-with-volumes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-readonly-with-volumes
+  template:
+    metadata:
+      labels:
+        app: nginx-readonly-with-volumes
+    spec:
+      containers:
+        - image: nginxinc/nginx-unprivileged
+          name: nginx-unprivileged
+          ports:
+            - containerPort: 8080
+          securityContext:
+            readOnlyRootFilesystem: true
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+
+      volumes:
+        - name: tmp
+          emptyDir: {}
