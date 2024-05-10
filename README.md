@@ -2,9 +2,7 @@
 
 Best practices for applications on Kubernetes.
 
-## Best practices
-
-### Application architecture
+## Application architecture
 
 - [What a Pod is and what a Pod is not](Pods/README.md)
 
@@ -28,7 +26,7 @@ Best practices for applications on Kubernetes.
 
 - [Graceful shutdown](Shutdown/README.md)
 
-### Security
+## Security
 
 - [Run with ServiceAccounts](ServiceAccounts/README.md)
 
@@ -42,7 +40,7 @@ Best practices for applications on Kubernetes.
 
 - [Use Secrets with care](/Secrets/README.md)
 
-### Deployment
+## Deployment
 
 - [Be declarative](DeclarativeResources/README.md)
 
