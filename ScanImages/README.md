@@ -1,6 +1,6 @@
 # Scan your images
 
-Before deploying you should scan all container images which make up your application with a tool like `trivy`. Scanning tools make use of the fact that images are made up of layers, each of which is identified by a unique hash. These hashes can be used to build up global databases of known vulnerabilities, misconfigurations and secret breaches for each image layer.
+Before deploying you should scan all container images which make up your application with a tool like [Trivy](https://trivy.dev). Scanning tools make use of the fact that images are made up of layers, each of which is identified by a unique hash. These hashes can be used to build up global databases of known vulnerabilities, misconfigurations and secret breaches for each image layer.
 
 Scanning your images allows you to detect security issues which sneak into your image via base images and application dependencies.
 
