@@ -12,7 +12,7 @@ Deploy the example using the following command:
 kubectl apply -f examples/
 ```
 
-Not that the Pod without `/tmp` mounted as a writeable volume fails to start because NGINX needs to write to `/tmp`. The deployment which mounts `/tmp` as a writeable volume starts correctly.
+Note that the Pod without `/tmp` mounted as a writeable volume fails to start because NGINX needs to write to `/tmp`. The deployment which mounts `/tmp` as a writeable volume starts correctly.
 
 Clean up using the following command:
 

@@ -36,7 +36,9 @@ Best practices for applications on Kubernetes.
 
 - [Read-only filesystem](ReadOnlyFilesystem/README.md)
 
-- [Minimal Containers](MinimalContainers/README.md)
+- [Minimal containers](MinimalContainers/README.md)
+
+- [Scan youe images](ScanImages/README.md)
 
 - [Use Secrets with care](/Secrets/README.md)
 
