@@ -28,9 +28,9 @@ kubectl get pods -o wide
 Make requests the nginx instances and check the outputs
 
 ```shell
-kubectl run curl --image=curlimages/curl --rm -it -- curl <Pod 1 IP>
+kubectl run curl --image=curlimages/curl -i --tty --rm --restart=Never -- <Pod 1 IP>
 
-kubectl run curl --image=curlimages/curl --rm -it -- curl <Pod 2 IP>
+kubectl run curl --image=curlimages/curl -i --tty --rm --restart=Never -- <Pod 2 IP>
 ```
 
 Use the following command to delete the deployments
