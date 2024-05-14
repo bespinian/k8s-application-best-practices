@@ -12,8 +12,14 @@ Create a dummy secret on the command line:
 kubectl create secret generic example-secret --from-literal=password="verysecret"
 ```
 
+Inspect the secret in clear text
+
+```shell
+kubectl get secret example-secret -o template --template={{.data.password}} | base64 -d
+```
+
 Clean up using the following command:
 
 ```shell
-kubectl delete secret example secret
+kubectl delete secret example-secret
 ```
