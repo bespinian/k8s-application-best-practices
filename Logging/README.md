@@ -39,5 +39,5 @@ Logs are visible, as expected.
 Delete both Pods with the following command:
 
 ```shell
-kubectl delete -f example/
+kubectl delete -f examples/
 ```
