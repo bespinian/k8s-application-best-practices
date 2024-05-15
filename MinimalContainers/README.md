@@ -68,7 +68,7 @@ Just looking at the size we see that this image is more than 800 megabytes.
 dive "$REPO/python-minimal-example:0.0.1"
 ```
 
-If we look at the size of the minimal image, we see that it is less than 50 megabytes.
+If we look at the size of the minimal image, we see that it is less than 60 megabytes.
 
 ### A distroless golang application image
 
