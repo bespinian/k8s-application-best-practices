@@ -28,6 +28,7 @@ spec:
       labels:
         app: example
     spec:
+      terminationGracePeriodSeconds: 1
       containers:
         - command:
             - /bin/sh

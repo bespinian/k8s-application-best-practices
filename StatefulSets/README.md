@@ -16,7 +16,7 @@ Example 2: A legacy database technology which is based on integration via the st
 
 ## Examples
 
-A MongoDB cluster with 3 replicas. The Pod-spec contains a `mongo` container and a sidecar. The latter is responsible for executing the cluster-join functionality when a new replica is added.
+An example cluster with 3 replicas. The Pod-spec contains a `listener` container and an `announcer` init container. The latter is responsible for emulating the cluster-join functionality when a new replica is added.
 
 Use the following command to deploy the StatefulSet:
 
@@ -33,7 +33,7 @@ kubectl get pods
 As soon as the first pod is up, follow the logs of its sidecar container to observe the other replicas joining the cluster.
 
 ```shell
-kubectl logs mongodb -c mongodb-k8s-sidecar -f
+kubectl logs -c listener example-0 -f
 ```
 
 Use the following command to delete the StatefulSet:
