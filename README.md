@@ -1,32 +1,44 @@
-# k8s-application-best-practices
+# Kubernetes Application Best Practices
 
-Best practices for applications on Kubernetes.
+Best practices for applications on Kubernetes
 
-## Application architecture
+`git clone` this repo and work your way through the individual READMEs in the following order:
+
+## App Components
 
 - [What a Pod is and what a Pod is not](Pods/README.md)
 
 - [Use Deployments for stateless components](Deployments/README.md)
 
-- [Use StatefulSets for stateful components](StatefulSets/README.md)
+- [Resource requests and limits](RequestsLimits/README.md)
 
 - [Use Services to expose and access your components](Services/README.md)
 
-- [Use liveness and readiness probes on you components](LivenessReadinessProbes/README.md)
+## App Troubleshooting
 
-- [Make your components log to stdout / stderr](Logging/README.md)
+- [Streamline your troubleshooting efforts](Troubleshooting/README.md)
 
-- [Expose your component's metrics on an endpoint](Metrics/README.md)
+## App Patterns
+
+- [Use StatefulSets for stateful components](StatefulSets/README.md)
 
 - [Configure components via environment variables and use ConfigMaps for configuration parameters](Configuration/README.md)
 
-- [Resource requests and limits](RequestsLimits/README.md)
-
 - [Persistence](Persistence/README.md)
+
+## App Design
+
+- [Make your components log to stdout / stderr](Logging/README.md)
 
 - [Graceful shutdown](Shutdown/README.md)
 
-## Security
+## App Monitoring
+
+- [Use liveness and readiness probes on your components](LivenessReadinessProbes/README.md)
+
+- [Expose your component's metrics on an endpoint](Metrics/README.md)
+
+## App Security
 
 - [Run with ServiceAccounts](ServiceAccounts/README.md)
 
@@ -38,11 +50,11 @@ Best practices for applications on Kubernetes.
 
 - [Minimal containers](MinimalContainers/README.md)
 
-- [Scan youe images](ScanImages/README.md)
+- [Scan your images](ScanImages/README.md)
 
 - [Use Secrets with care](/Secrets/README.md)
 
-## Deployment
+## App Deployment
 
 - [Be declarative](DeclarativeResources/README.md)
 

@@ -6,11 +6,11 @@
 
 ## Which containers should go together in Pod?
 
-Containers which are tightly coupled to provide a certain functionality should be co-located in a pod. Example: A container serving an api and a container which acts as an adaptor, transforming the data format of the api for certain clients.
+Containers which are tightly coupled to provide a certain functionality should be co-located in a pod. Example: A container serving an API and a container which acts as an adapter, transforming the data format of the API for certain clients.
 
 ## Which containers should not go together in Pod?
 
-Containers which have different purposes and / or different lifespans in an overall application architecture. Example: a container serving an api and a container running a database on which the api is based.
+Containers which have different purposes and / or different lifespans in an overall application architecture. Example: a container serving an API and a container running a database on which the API is based.
 
 ## Example
 

@@ -7,22 +7,22 @@ metadata:
   name: nginx-pod
 spec:
   containers:
-  - image: nginx
-    name: nginx
-    ports:
-    - containerPort: 80
-    volumeMounts:
-      - name: data
-        mountPath: /usr/share/nginx/html
-  - image: alpine
-    name: generator
-    args:
-      - /bin/sh
-      - -c
-      - while true; do od -An -N1 -i /dev/random >> /output/index.html; sleep 5; done;
-    volumeMounts:
-      - name: data
-        mountPath: /output
+    - image: nginx
+      name: nginx
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - name: data
+          mountPath: /usr/share/nginx/html
+    - image: alpine
+      name: generator
+      args:
+        - /bin/sh
+        - -c
+        - while true; do od -An -N1 -i /dev/random >> /output/index.html; sleep 5; done;
+      volumeMounts:
+        - name: data
+          mountPath: /output
   volumes:
     - name: data
       emptyDir: {}

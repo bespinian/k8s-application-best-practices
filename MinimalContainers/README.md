@@ -8,7 +8,7 @@ We can mitigate this by using multi-stage builds for building our container imag
 
 ### A minimal Python application image
 
-Images for applications written in interpreted languages like Python or NodeJS can usually be stripped down to a minimal runtime. Consider the following non-optimal Dockerfile:
+Images for applications written in interpreted languages like Python or Node.js can usually be stripped down to a minimal runtime. Consider the following non-optimal Dockerfile:
 
 ```Dockerfile
 FROM python:3.9
@@ -50,7 +50,7 @@ ENV PATH=/root/.local:$PATH
 CMD [ "python", "./server.py" ]
 ```
 
-Use the following command to build a optimized image for a Python Flask application:
+Use the following command to build an optimized image for a Python Flask application:
 
 ```shell
 docker build examples/python -f examples/python/minimal.Dockerfile -t "$REPO/python-minimal-example:0.0.1"
@@ -70,7 +70,7 @@ dive "$REPO/python-minimal-example:0.0.1"
 
 If we look at the size of the minimal image, we see that it is less than 60 megabytes.
 
-### A distroless golang application image
+### A distroless Go application image
 
 Images for applications written in a compiled language like Go can be stripped down even further, starting from `scratch` in the image build and adding only the compiled binary.
 

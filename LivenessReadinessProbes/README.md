@@ -1,6 +1,6 @@
-# Use liveness and readiness probes on you components
+# Use liveness and readiness probes on your components
 
-Application components should declare a liveness [probe](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes) in order to enable Kubernetes to determine whether a particular replica of the component is healthy and functioning as expected. They should also declare a readiness probe in order to enable Kubernetes to determine whether a particular replica is ready for receiving traffic or whether it is too busy. Both liveness and readiness probes can be based on http endpoints, tcp ports or shell scripts which are executed in the respective containers. If a Pod of a Deployment or StatefulSet fails its liveness probe, Kubernetes will terminate it and schedule a new Pod with the same specification. If a Pod of a Deployment fails its readiness probe, Kubernetes will temporarily refrain from sending traffic to that particular Pod and instead send it to other replicas. Startup probes work analogously to readiness probes, but they are only checked during Pod startup. Kubernetes uses the startup probe to determine when it should consider a Pod as started.
+Application components should declare a liveness [probe](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes) in order to enable Kubernetes to determine whether a particular replica of the component is healthy and functioning as expected. They should also declare a readiness probe in order to enable Kubernetes to determine whether a particular replica is ready for receiving traffic or whether it is too busy. Both liveness and readiness probes can be based on HTTP endpoints, TCP ports or shell scripts which are executed in the respective containers. If a Pod of a Deployment or StatefulSet fails its liveness probe, Kubernetes will terminate it and schedule a new Pod with the same specification. If a Pod of a Deployment fails its readiness probe, Kubernetes will temporarily refrain from sending traffic to that particular Pod and instead send it to other replicas. Startup probes work analogously to readiness probes, but they are only checked during Pod startup. Kubernetes uses the startup probe to determine when it should consider a Pod as started.
 
 ## Why do we need liveness probes?
 
@@ -34,7 +34,7 @@ Check the pods using
 kubectl get pods
 ```
 
-Confirm that the Pod takes something over 10s to become ready.
+Confirm that the Pod takes something over 10 seconds to become ready.
 
 Use the following command to delete the Deployment:
 

@@ -2,15 +2,15 @@
 
 ![Overview of EFK architecture on Kubernetes](img/efk.png)
 
-Application components deployed to Kubernetes should always write their logs to the stdout or stderr streams and not to log files in the local file system. The reasons for this are that
+Application components deployed to Kubernetes should always write their logs to the stdout or stderr streams and not to log files in the local filesystem. The reasons for this are that
 
 1. we want logs to be readable via the `kubectl logs` command and
 1. we want logs to be easily accessible to log aggregation solutions like fluentd which collect the logs of all containers on a Kubernetes cluster and forward them to a central logging platform and
-1. logs stored in the local file system are lost when a container crashes.
+1. logs stored in the local filesystem are lost when a container crashes.
 
 ## Rule of thumb
 
-It should never be necessary to open an shell in a container in order to inspect the logs of an application container.
+It should never be necessary to open a shell in a container in order to inspect the logs of an application container.
 
 ## Examples
 
